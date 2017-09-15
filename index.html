@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+
+<body>
+	<h1>Helloworld</h1>
+<form>
+	<span onclick="upload()">上传</span>
+</form>
+
+<script>
+
+function upload(){
+	alert("11");
+}
+	
+	var args = [12.13,21.1,1.11];
+
+
+	//console.log(sum(args));
+	//console.log(addFloat(33.23,1.11));
+function sum(args) {
+        var sum = 0;
+        if(args.length==0){
+            return 0;
+        }
+        if(args.length==1){
+            return args[0];
+        }
+        for(var i=0;i<args.length;i++){
+        	console.log("--------");
+        	console.log("之前:"+sum);
+        	console.log("增加值:"+args[i]);
+        	sum=addFloat(sum,args[i]);
+        	console.log("之后:"+sum);
+        }
+        return sum;
+}
+
+function addFloat(arg1, arg2) {
+        if (arg1 == null || arg1 == "") {
+            arg1 = 0;
+        }
+        if (arg2 == null || arg2 == "") {
+            arg2 = 0;
+        }
+        var r1, r2, m;
+        try {
+            r1 = arg1.toString().split(".")[1].length;
+        } catch(e) {
+            r1 = 0;
+        }
+        try {
+            r2 = arg2.toString().split(".")[1].length;
+        } catch(e) {
+            r2 = 0;
+        }
+        m = Math.pow(10, Math.max(r1, r2));
+        console.log("=========");
+        
+        var f1 = Math.round(arg1 * m).toFixed(0);
+        var f2 = Math.round(arg2 * m).toFixed(0);
+        var sum = f1+f2;
+        console.log(sum);
+        return (parseInt(Math.round(arg1 * m).toFixed(0)) + parseInt(Math.round(arg2 * m).toFixed(0))) / m;
+}
+
+</script>
+	
+</body>
+</html>
